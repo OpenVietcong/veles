@@ -192,6 +192,7 @@ add_library(veles_base
     ${INCLUDE_DIR}/network/msgpackwrapper.h
     ${INCLUDE_DIR}/parser/parser.h
     ${INCLUDE_DIR}/parser/stream.h
+    ${INCLUDE_DIR}/parser/unbes.h
     ${INCLUDE_DIR}/parser/unpng.h
     ${INCLUDE_DIR}/parser/unpyc.h
     ${INCLUDE_DIR}/parser/utils.h
@@ -270,6 +271,7 @@ add_library(veles_base
     ${SRC_DIR}/dbif/dbif.cc
     ${SRC_DIR}/network/msgpackobject.cc
     ${SRC_DIR}/parser/parser.cc
+    ${SRC_DIR}/parser/unbes.cc
     ${SRC_DIR}/parser/unpng.cc
     ${SRC_DIR}/parser/unpyc.cc
     ${SRC_DIR}/parser/utils.cc
