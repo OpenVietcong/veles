@@ -62,6 +62,17 @@ dbif::ObjectHandle makeSubBlob(const dbif::ObjectHandle& parent,
       ->object;
 }
 
+data::BinData getData(const dbif::ObjectHandle& parent,
+                      uint64_t pos,
+                      const data::Repacker& repack,
+                      size_t num_elements) {
+  size_t src_sz = repack.repackSize(num_elements);
+  auto data =
+      parent->syncGetInfo<veles::dbif::BlobDataRequest>(pos, pos + src_sz);
+  data::BinData res = repack.repack(data->data, 0, num_elements);
+  return res;
+}
+
 QList<Parser*> createAllParsers() {
   QList<Parser*> res;
   res.append(new PycParser());

@@ -30,6 +30,10 @@ data::ChunkDataItem findField(const dbif::ObjectHandle& parent,
                               const QString& name);
 dbif::ObjectHandle makeSubBlob(const dbif::ObjectHandle& parent,
                                const QString& name, const data::BinData& data);
+data::BinData getData(const dbif::ObjectHandle& parent,
+                      uint64_t pos,
+                      const data::Repacker& repack,
+                      size_t num_elements);
 QList<Parser*> createAllParsers();
 
 }  // namespace parser
